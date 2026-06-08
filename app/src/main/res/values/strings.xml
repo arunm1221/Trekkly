@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Trekkly</string>
-    <string name="Trekk">Trek</string>
+    <string name="Trekk">Trekk</string>
     <string name="ly">ly</string>
     <string name="moto">your trek companion</string>
+    <string name="moto_1">Every summit starts with a step!</string>
+    <string name="track_content">Track your expeditions, discover new treks, and connect with fellow adventurers.</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="privacy_policy_text"><![CDATA[By continuing you agree to our Terms & Privacy Policy]]></string>
 </resources>

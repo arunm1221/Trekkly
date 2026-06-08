@@ -1,4 +1,4 @@
-package com.example.trekkly.presentation
+package com.example.trekkly.presentation.Splash
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -47,12 +47,14 @@ import java.util.Locale.getDefault
 import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
-fun SplashScreen(){
+fun SplashScreen(onSplashFinished:()-> Unit){
     var contentVisible by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         delay(150.milliseconds)
         contentVisible=true
+        delay(2000.milliseconds)
+        onSplashFinished()
     }
     Box(modifier = Modifier.fillMaxSize()){
 
@@ -103,5 +105,5 @@ fun SplashScreen(){
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenView(){
-    SplashScreen()
+    SplashScreen(onSplashFinished = {})
 }
