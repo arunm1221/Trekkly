@@ -20,6 +20,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.trekkly.navigation.TrekklyNavHost
+import com.example.trekkly.presentation.Splash.SplashScreen
 import com.example.trekkly.presentation.theme.TrekklyTheme
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.milliseconds
@@ -43,21 +45,8 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             keeSplashOnScreen =false
-            var showSplash by remember { mutableStateOf(true) }
-
-            LaunchedEffect(Unit) {
-                delay(3500.milliseconds)
-                showSplash=false
-            }
             TrekklyTheme {
-                if (showSplash){
-                    SplashScreen()
-                }else{
-                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        Greeting(name = "Android", modifier = Modifier.padding(innerPadding))
-                    }
-
-                }
+                TrekklyNavHost()
 
             }
         }
