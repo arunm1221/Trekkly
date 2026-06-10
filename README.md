@@ -119,3 +119,12 @@ cd trekkly
 ```
 
 Minimum SDK: **24** · Target SDK: **36**
+
+
+<img width="1080" height="2424" alt="image" src="https://github.com/user-attachments/assets/a20483bd-4b7e-44b6-be6b-67fc2a5e1b04" />
+
+<img width="1080" height="2424" alt="image" src="https://github.com/user-attachments/assets/9daab610-eb76-44c4-8397-50541cc8d4d9" />
+
+<img width="1080" height="2424" alt="image" src="https://github.com/user-attachments/assets/5d27cae9-cd67-4114-9dc3-e573460572c8" />
+
+<img width="1080" height="2424" alt="image" src="https://github.com/user-attachments/assets/87c59e99-1877-45e9-b202-665a83f4ccad" />
