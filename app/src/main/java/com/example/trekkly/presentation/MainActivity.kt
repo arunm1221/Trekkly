@@ -23,9 +23,11 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.trekkly.navigation.TrekklyNavHost
 import com.example.trekkly.presentation.Splash.SplashScreen
 import com.example.trekkly.presentation.theme.TrekklyTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.milliseconds
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private var keeSplashOnScreen = true
 
