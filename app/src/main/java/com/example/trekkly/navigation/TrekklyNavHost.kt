@@ -2,11 +2,15 @@ package com.example.trekkly.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.trekkly.presentation.AuthScreen.AuthenticationScreen
 import com.example.trekkly.presentation.Splash.SplashScreen
+import com.example.trekkly.presentation.signup.ui.SignUpScreen
+import com.example.trekkly.presentation.signup.ui.OtpVerificationScreen
 
 @Composable
 fun TrekklyNavHost(
@@ -31,13 +35,56 @@ fun TrekklyNavHost(
                     // navHostController.navigate(ScreenDestination.Login.route)
                 },
                 onSignUpClick = {
-                    // navHostController.navigate(ScreenDestination.SignUp.route)
+                     navHostController.navigate(ScreenDestination.SignUpScreen.route)
                 },
                 onTermsClick = {
                     // navHostController.navigate(ScreenDestination.Terms.route)
                 },
                 onPrivacyPolicyClick = {
                     // navHostController.navigate(ScreenDestination.Privacy.route)
+                }
+            )
+        }
+        composable(ScreenDestination.SignUpScreen.route){
+            SignUpScreen(
+                onBackClick = {
+                    navHostController.popBackStack()
+                },
+                onLoginClick = {
+                    // No dedicated Login screen yet — return to the auth landing screen,
+                    // where the user can tap "Log In". Replace once Login is built.
+                    navHostController.popBackStack()
+                },
+                onNavigateToOtp = { verificationId, phoneNumber, fullName ->
+                    navHostController.navigate(
+                        ScreenDestination.OtpVerification.createRoute(
+                            verificationId, phoneNumber, fullName
+                        )
+                    )
+                }
+            )
+        }
+
+        composable(
+            route = ScreenDestination.OtpVerification.route,
+            arguments = listOf(
+                navArgument("verificationId") { type = NavType.StringType; defaultValue = "" },
+                navArgument("phoneNumber") { type = NavType.StringType; defaultValue = "" },
+                navArgument("fullName") { type = NavType.StringType; defaultValue = "" }
+            )
+        ) { backStackEntry ->
+            val verificationId = backStackEntry.arguments?.getString("verificationId") ?: ""
+            val phoneNumber = backStackEntry.arguments?.getString("phoneNumber") ?: ""
+            val fullName = backStackEntry.arguments?.getString("fullName") ?: ""
+
+            OtpVerificationScreen(
+                phoneNumber = phoneNumber,
+                onBackClick = { navHostController.popBackStack() },
+                onVerificationSuccess = {
+                    // TODO: navigate to Home once built
+                    // navHostController.navigate(ScreenDestination.Home.route) {
+                    //     popUpTo(0) { inclusive = true }
+                    // }
                 }
             )
         }

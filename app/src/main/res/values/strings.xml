@@ -8,4 +8,11 @@
     <string name="login">Log In</string>
     <string name="signup">Sign Up</string>
     <string name="privacy_policy_text"><![CDATA[By continuing you agree to our Terms & Privacy Policy]]></string>
+    <string name="create_account">create account</string>
+    <string name="join_the">Join the\n</string>
+    <string name="fullname">full name</string>
+    <string name="verification">verification</string>
+    <string name="enter_the">Enter the\n</string>
+    <string name="four_digit_code">4-digit code.</string>
+    <string name="sent_to">"Sent to "</string>
 </resources>
