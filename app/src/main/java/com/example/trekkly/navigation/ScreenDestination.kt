@@ -26,4 +26,7 @@ sealed class ScreenDestination(val route: String) {
                 "phoneNumber=${Uri.encode(phoneNumber)}&" +
                 "fullName=${Uri.encode(fullName)}"
     }
+
+    data object LoginScreen: ScreenDestination("LoginScreen")
+
 }

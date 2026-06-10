@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.trekkly.presentation.AuthScreen.AuthenticationScreen
 import com.example.trekkly.presentation.Splash.SplashScreen
+import com.example.trekkly.presentation.login.ui.LoginScreen
 import com.example.trekkly.presentation.signup.ui.SignUpScreen
 import com.example.trekkly.presentation.signup.ui.OtpVerificationScreen
 
@@ -32,7 +33,7 @@ fun TrekklyNavHost(
         composable(ScreenDestination.AuthenticationScreen.route){
             AuthenticationScreen(
                 onLoginClick = {
-                    // navHostController.navigate(ScreenDestination.Login.route)
+                     navHostController.navigate(ScreenDestination.LoginScreen.route)
                 },
                 onSignUpClick = {
                      navHostController.navigate(ScreenDestination.SignUpScreen.route)
@@ -51,9 +52,7 @@ fun TrekklyNavHost(
                     navHostController.popBackStack()
                 },
                 onLoginClick = {
-                    // No dedicated Login screen yet — return to the auth landing screen,
-                    // where the user can tap "Log In". Replace once Login is built.
-                    navHostController.popBackStack()
+                   navHostController.navigate(ScreenDestination.LoginScreen.route)
                 },
                 onNavigateToOtp = { verificationId, phoneNumber, fullName ->
                     navHostController.navigate(
@@ -87,6 +86,20 @@ fun TrekklyNavHost(
                     // }
                 }
             )
+        }
+
+
+        composable(route= ScreenDestination.LoginScreen.route){
+
+            LoginScreen(
+                onBackClick = {navHostController.popBackStack()},
+                onLoginClick = {
+                    TODO()
+                },
+                onSignUpClick = { navHostController.navigate(ScreenDestination.SignUpScreen.route) }
+
+            )
+
         }
     }
 

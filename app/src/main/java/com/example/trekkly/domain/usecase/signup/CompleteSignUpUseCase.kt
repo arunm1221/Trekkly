@@ -1,4 +1,4 @@
-package com.example.trekkly.domain.usecase
+package com.example.trekkly.domain.usecase.signup
 
 import com.example.trekkly.data.local.datastore.SessionPreference
 import com.example.trekkly.domain.model.User

@@ -48,6 +48,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import android.app.Activity
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -131,9 +134,10 @@ fun SignUpContent(
             .background(color = Color.Black.copy(alpha = .45f)))
         Column(
             modifier = Modifier.fillMaxSize()
+                .windowInsetsPadding(WindowInsets.statusBars)
                 .padding(horizontal = 24.dp)
         ) {
-            BackButton(onBackClick = onBackClick, modifier = Modifier.padding(top = 56.dp))
+            BackButton(onBackClick = onBackClick, modifier = Modifier.padding(top = 16.dp))
             VerticalSpacer()
             SignUpHeadLine()
             VerticalSpacer()
@@ -263,7 +267,7 @@ fun PhoneNumberField(
         value = phoneNumber,
         onValueChange = onPhoneNumberChanged,
         modifier = Modifier.fillMaxWidth(),
-        placeholder = {Text(text = "9539094454")},
+        placeholder = {Text(text = "0000000000")},
         singleLine = true,
         shape = RoundedCornerShape(16.dp),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
@@ -304,7 +308,6 @@ fun CountryCodeSelected(
             .clickable(enabled = countryCodes.isNotEmpty()) { expanded=true }
             .padding(vertical = 4.dp),
             verticalAlignment = Alignment.CenterVertically){
-            Text(text = selected?.flagEmoji ?: "🏳", fontSize = 16.sp)
             Spacer(modifier = Modifier.width(4.dp))
             Text(
                 text = selected?.dialCode ?: "+--",

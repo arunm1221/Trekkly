@@ -1,4 +1,4 @@
-package com.example.trekkly.domain.usecase
+package com.example.trekkly.domain.usecase.signup
 
 import android.app.Activity
 import com.example.trekkly.domain.repository.AuthRepository

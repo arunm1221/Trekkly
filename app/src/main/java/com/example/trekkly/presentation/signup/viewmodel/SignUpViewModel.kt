@@ -5,14 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.trekkly.domain.model.CountryCode
 import com.example.trekkly.domain.repository.CountryCodeRepository
-import com.example.trekkly.domain.usecase.SendOtpUseCase
+import com.example.trekkly.domain.usecase.signup.SendOtpUseCase
 import com.example.trekkly.presentation.signup.uievents.SignUpEvent
 import com.example.trekkly.presentation.signup.uievents.SignUpState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
