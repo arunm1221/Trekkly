@@ -7,4 +7,6 @@ interface UserRepository {
     suspend fun createUserProfile(uid: String,name: String,phoneNumber: String) : Result<User>
     suspend fun getUserProfile(uid: String): Result<User?>
     suspend fun updateUserProfile(user: User): Result<User>
+
+    suspend fun getUserByPhone(phone: String): Result<User?>
 }

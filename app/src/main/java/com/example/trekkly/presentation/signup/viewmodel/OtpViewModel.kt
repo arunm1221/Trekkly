@@ -5,7 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.trekkly.domain.repository.AuthRepository
-import com.example.trekkly.domain.usecase.CompleteSignUpUseCase
+import com.example.trekkly.domain.usecase.signup.CompleteSignUpUseCase
 import com.example.trekkly.presentation.signup.uievents.OtpEvent
 import com.example.trekkly.presentation.signup.uievents.OtpUiState
 import dagger.hilt.android.lifecycle.HiltViewModel

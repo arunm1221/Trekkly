@@ -15,4 +15,6 @@
     <string name="enter_the">Enter the\n</string>
     <string name="four_digit_code">4-digit code.</string>
     <string name="sent_to">"Sent to "</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="phone_number">phone number</string>
 </resources>

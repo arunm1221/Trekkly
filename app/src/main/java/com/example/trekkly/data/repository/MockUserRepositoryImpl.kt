@@ -39,4 +39,9 @@ class MockUserRepositoryImpl @Inject constructor(): UserRepository {
         profiles[user.uid] = user
         return Result.success(user)
     }
+
+    override suspend fun getUserByPhone(phone: String): Result<User?> {
+        val user = profiles.values.firstOrNull(){it.phoneNumber==phone}
+        return Result.success(user)
+    }
 }
