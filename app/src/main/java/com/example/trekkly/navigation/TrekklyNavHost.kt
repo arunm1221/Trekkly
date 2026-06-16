@@ -9,7 +9,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.trekkly.presentation.AuthScreen.AuthenticationScreen
 import com.example.trekkly.presentation.Splash.SplashScreen
-import com.example.trekkly.presentation.home.ui.HomeScreen
 import com.example.trekkly.presentation.login.ui.LoginScreen
 import com.example.trekkly.presentation.signup.ui.SignUpScreen
 import com.example.trekkly.presentation.signup.ui.OtpVerificationScreen
@@ -81,9 +80,10 @@ fun TrekklyNavHost(
                 phoneNumber = phoneNumber,
                 onBackClick = { navHostController.popBackStack() },
                 onVerificationSuccess = {
-                    navHostController.navigate(ScreenDestination.HomeScreen.route) {
-                        popUpTo(0) { inclusive = true }
-                    }
+                    // TODO: navigate to Home once built
+                    // navHostController.navigate(ScreenDestination.Home.route) {
+                    //     popUpTo(0) { inclusive = true }
+                    // }
                 }
             )
         }
@@ -94,24 +94,12 @@ fun TrekklyNavHost(
             LoginScreen(
                 onBackClick = {navHostController.popBackStack()},
                 onLoginClick = {
-                    navHostController.navigate(ScreenDestination.HomeScreen.route) {
-                        popUpTo(0) { inclusive = true }
-                    }
+                    TODO()
                 },
                 onSignUpClick = { navHostController.navigate(ScreenDestination.SignUpScreen.route) }
 
             )
 
-        }
-
-        composable(route = ScreenDestination.HomeScreen.route) {
-            HomeScreen(
-                onTrekkClick = { trekkId ->
-                    // TODO: navigate to trekk detail once built
-                },
-                onViewAllClick = { /* TODO: navigate to all trekks */ },
-                onSearchClick = { /* TODO: navigate to search */ }
-            )
         }
     }
 
