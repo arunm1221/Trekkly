@@ -17,4 +17,7 @@
     <string name="sent_to">"Sent to "</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="phone_number">phone number</string>
+    <string name="hi">Hi</string>
+    <string name="current_expedition">Current Expedition</string>
+    <string name="upcoming_trekks">Upcoming Trekks</string>
 </resources>
