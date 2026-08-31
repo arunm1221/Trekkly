@@ -1,0 +1,10 @@
+package com.example.trekkly.data.local.entity
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "favourites")
+data class FavouriteEntity(
+    @PrimaryKey val trekId: String,
+    val favoritedAt: Long = System.currentTimeMillis()
+)

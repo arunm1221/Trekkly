@@ -1,0 +1,553 @@
+[
+  {
+    "id": "kedarkantha",
+    "title": "Kedarkantha Trek",
+    "coverImage": "kedarkantha/cover.jpg",
+    "images": [
+      "kedarkantha/1.jpg",
+      "kedarkantha/2.jpg",
+      "kedarkantha/3.jpg"
+    ],
+    "shortDescription": "A classic Himalayan winter summit trek through snow-laden pine forests.",
+    "description": "Kedarkantha is one of the most popular winter treks in India, famous for its stunning snow-covered trails, dense pine forests, and a summit climb that rewards you with 360-degree views of major Himalayan peaks like Swargarohini, Bandarpoonch, and Black Peak. The trail passes through charming campsites at Juda ka Talab and Kedarkantha Base, making it ideal for first-time Himalayan trekkers.",
+    "difficultyLevel": "Moderate",
+    "altitude": 3810,
+    "distance": 20.0,
+    "days": 6,
+    "nights": 5,
+    "bestSeason": "December to April",
+    "location": "Uttarkashi, Uttarakhand, India",
+    "latitude": 31.0245,
+    "longitude": 78.1829,
+    "startingPoint": "Sankri",
+    "endingPoint": "Sankri",
+    "trekType": "Multi-day",
+    "rating": 4.7,
+    "reviewCount": 1280,
+    "tags": [
+      "Himalayan",
+      "Winter",
+      "Snow",
+      "Summit",
+      "Beginner-friendly"
+    ],
+    "isFeatured": true,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Dehradun to Sankri",
+        "description": "Drive from Dehradun to Sankri village (the base), a scenic 10-hour journey through the Govind National Park.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 1950
+      },
+      {
+        "dayNumber": 2,
+        "title": "Sankri to Juda ka Talab",
+        "description": "Trek through dense pine and maple forests to the frozen lake campsite of Juda ka Talab.",
+        "distanceCovered": 4.0,
+        "altitudeReached": 2700
+      },
+      {
+        "dayNumber": 3,
+        "title": "Juda ka Talab to Kedarkantha Base",
+        "description": "Ascend through open meadows with widening views to reach the Kedarkantha Base camp.",
+        "distanceCovered": 4.0,
+        "altitudeReached": 3450
+      },
+      {
+        "dayNumber": 4,
+        "title": "Summit Day and descent to Hargaon",
+        "description": "Early morning summit push to Kedarkantha peak for sunrise, then descend to Hargaon campsite.",
+        "distanceCovered": 6.0,
+        "altitudeReached": 3810
+      },
+      {
+        "dayNumber": 5,
+        "title": "Hargaon to Sankri",
+        "description": "Descend back through the forest to Sankri village.",
+        "distanceCovered": 6.0,
+        "altitudeReached": 1950
+      },
+      {
+        "dayNumber": 6,
+        "title": "Sankri to Dehradun",
+        "description": "Drive back to Dehradun, trek concludes.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 640
+      }
+    ]
+  },
+  {
+    "id": "chembra-peak",
+    "title": "Chembra Peak Trek",
+    "coverImage": "chembra-peak/cover.jpg",
+    "images": [
+      "chembra-peak/1.jpg",
+      "chembra-peak/2.jpg"
+    ],
+    "shortDescription": "Wayanad's highest peak, home to the famous heart-shaped lake.",
+    "description": "Chembra Peak is the highest peak in the Wayanad district of Kerala, set amid rolling tea estates and lush green hills. The trail is best known for its iconic heart-shaped lake, which is said to never dry up. The trek offers sweeping views of the Western Ghats and is a perfect short, rewarding day hike for nature lovers.",
+    "difficultyLevel": "Easy",
+    "altitude": 2100,
+    "distance": 7.0,
+    "days": 1,
+    "nights": 0,
+    "bestSeason": "September to February",
+    "location": "Wayanad, Kerala, India",
+    "latitude": 11.5167,
+    "longitude": 76.1,
+    "startingPoint": "Meppadi",
+    "endingPoint": "Meppadi",
+    "trekType": "Day trek",
+    "rating": 4.4,
+    "reviewCount": 642,
+    "tags": [
+      "Western Ghats",
+      "Day Trek",
+      "Lake",
+      "Tea Estate",
+      "Family-friendly"
+    ],
+    "isFeatured": false,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Meppadi to Chembra Peak and back",
+        "description": "Obtain the forest pass at Meppadi, trek up through tea estates and grasslands to the heart-shaped lake and summit viewpoint, then descend the same route.",
+        "distanceCovered": 7.0,
+        "altitudeReached": 2100
+      }
+    ]
+  },
+  {
+    "id": "hampta-pass",
+    "title": "Hampta Pass Trek",
+    "coverImage": "hampta-pass/cover.jpg",
+    "images": [
+      "hampta-pass/1.jpg",
+      "hampta-pass/2.jpg",
+      "hampta-pass/3.jpg"
+    ],
+    "shortDescription": "A dramatic crossover trek from green Kullu valleys to the barren Spiti landscape.",
+    "description": "Hampta Pass is a spectacular crossover trek that takes you from the lush green valleys of Kullu to the stark, desert-like terrain of Lahaul and Spiti in a single trail. Within a few days you walk through pine forests, grasslands, river crossings, and a high mountain pass at 4,270 m, ending with an optional visit to the surreal Chandratal Lake.",
+    "difficultyLevel": "Moderate",
+    "altitude": 4270,
+    "distance": 26.0,
+    "days": 5,
+    "nights": 4,
+    "bestSeason": "June to September",
+    "location": "Kullu, Himachal Pradesh, India",
+    "latitude": 32.2432,
+    "longitude": 77.3719,
+    "startingPoint": "Jobra (Manali)",
+    "endingPoint": "Chatru",
+    "trekType": "Multi-day",
+    "rating": 4.6,
+    "reviewCount": 980,
+    "tags": [
+      "Himalayan",
+      "Crossover",
+      "River Crossing",
+      "Chandratal",
+      "Adventure"
+    ],
+    "isFeatured": true,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Manali to Jobra, trek to Chika",
+        "description": "Short drive to Jobra, then an easy walk through forests to the Chika campsite beside the river.",
+        "distanceCovered": 2.0,
+        "altitudeReached": 3100
+      },
+      {
+        "dayNumber": 2,
+        "title": "Chika to Balu ka Ghera",
+        "description": "Trek alongside the Rani river through meadows to the base camp of the pass.",
+        "distanceCovered": 7.0,
+        "altitudeReached": 3600
+      },
+      {
+        "dayNumber": 3,
+        "title": "Balu ka Ghera to Shea Goru via Hampta Pass",
+        "description": "The big day: climb to Hampta Pass at 4,270 m for stunning views, then a steep descent to Shea Goru.",
+        "distanceCovered": 8.0,
+        "altitudeReached": 4270
+      },
+      {
+        "dayNumber": 4,
+        "title": "Shea Goru to Chatru, drive to Chandratal",
+        "description": "Descend to Chatru and drive to the beautiful Chandratal Lake.",
+        "distanceCovered": 6.0,
+        "altitudeReached": 3360
+      },
+      {
+        "dayNumber": 5,
+        "title": "Chatru to Manali",
+        "description": "Drive back to Manali over Rohtang Pass, trek concludes.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 2050
+      }
+    ]
+  },
+  {
+    "id": "triund",
+    "title": "Triund Trek",
+    "coverImage": "triund/cover.jpg",
+    "images": [
+      "triund/1.jpg",
+      "triund/2.jpg"
+    ],
+    "shortDescription": "A short, scenic weekend trek above McLeod Ganj with Dhauladhar views.",
+    "description": "Triund is one of the most accessible Himalayan treks, perfect for beginners and weekend travellers. A steady climb from McLeod Ganj brings you to a grassy ridge offering panoramic views of the Dhauladhar range on one side and the Kangra valley on the other. Camping overnight under the stars at Triund is an unforgettable first taste of the mountains.",
+    "difficultyLevel": "Easy",
+    "altitude": 2828,
+    "distance": 18.0,
+    "days": 2,
+    "nights": 1,
+    "bestSeason": "March to June, September to December",
+    "location": "Dharamshala, Himachal Pradesh, India",
+    "latitude": 32.2667,
+    "longitude": 76.3667,
+    "startingPoint": "McLeod Ganj",
+    "endingPoint": "McLeod Ganj",
+    "trekType": "Multi-day",
+    "rating": 4.3,
+    "reviewCount": 1530,
+    "tags": [
+      "Himalayan",
+      "Weekend",
+      "Camping",
+      "Beginner-friendly",
+      "Dhauladhar"
+    ],
+    "isFeatured": false,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "McLeod Ganj to Triund",
+        "description": "Climb through oak and rhododendron forest to the Triund ridge, set up camp and enjoy sunset over the Dhauladhars.",
+        "distanceCovered": 9.0,
+        "altitudeReached": 2828
+      },
+      {
+        "dayNumber": 2,
+        "title": "Triund to McLeod Ganj",
+        "description": "Catch sunrise over the snow peaks, then descend back to McLeod Ganj.",
+        "distanceCovered": 9.0,
+        "altitudeReached": 2082
+      }
+    ]
+  },
+  {
+    "id": "valley-of-flowers",
+    "title": "Valley of Flowers Trek",
+    "coverImage": "valley-of-flowers/cover.jpg",
+    "images": [
+      "valley-of-flowers/1.jpg",
+      "valley-of-flowers/2.jpg",
+      "valley-of-flowers/3.jpg"
+    ],
+    "shortDescription": "A UNESCO World Heritage valley carpeted with hundreds of alpine flowers.",
+    "description": "The Valley of Flowers is a UNESCO World Heritage Site in Uttarakhand, renowned for its meadows of endemic alpine flowers that bloom in the monsoon months. The trek combines the vibrant valley with a visit to Hemkund Sahib, a high-altitude glacial lake and revered Sikh shrine. It is a paradise for nature lovers, botanists, and photographers.",
+    "difficultyLevel": "Moderate",
+    "altitude": 4329,
+    "distance": 38.0,
+    "days": 6,
+    "nights": 5,
+    "bestSeason": "July to September",
+    "location": "Chamoli, Uttarakhand, India",
+    "latitude": 30.7283,
+    "longitude": 79.605,
+    "startingPoint": "Govindghat",
+    "endingPoint": "Govindghat",
+    "trekType": "Multi-day",
+    "rating": 4.8,
+    "reviewCount": 1120,
+    "tags": [
+      "Himalayan",
+      "UNESCO",
+      "Flowers",
+      "Monsoon",
+      "Hemkund Sahib"
+    ],
+    "isFeatured": true,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Rishikesh to Govindghat",
+        "description": "Long scenic drive along the Alaknanda river to the road-head town of Govindghat.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 1828
+      },
+      {
+        "dayNumber": 2,
+        "title": "Govindghat to Ghangaria",
+        "description": "Trek (with optional pony/helicopter) up the valley to the base village of Ghangaria.",
+        "distanceCovered": 10.0,
+        "altitudeReached": 3050
+      },
+      {
+        "dayNumber": 3,
+        "title": "Ghangaria to Valley of Flowers and back",
+        "description": "Day hike into the famous flower valley, returning to Ghangaria for the night.",
+        "distanceCovered": 8.0,
+        "altitudeReached": 3858
+      },
+      {
+        "dayNumber": 4,
+        "title": "Ghangaria to Hemkund Sahib and back",
+        "description": "Steep climb to the glacial lake and gurudwara at Hemkund Sahib, then descend.",
+        "distanceCovered": 12.0,
+        "altitudeReached": 4329
+      },
+      {
+        "dayNumber": 5,
+        "title": "Ghangaria to Govindghat",
+        "description": "Descend back to Govindghat.",
+        "distanceCovered": 10.0,
+        "altitudeReached": 1828
+      },
+      {
+        "dayNumber": 6,
+        "title": "Govindghat to Rishikesh",
+        "description": "Drive back to Rishikesh, trek concludes.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 372
+      }
+    ]
+  },
+  {
+    "id": "tadiandamol",
+    "title": "Tadiandamol Trek",
+    "coverImage": "tadiandamol/cover.jpg",
+    "images": [
+      "tadiandamol/1.jpg",
+      "tadiandamol/2.jpg"
+    ],
+    "shortDescription": "The highest peak in Coorg, through shola forests and rolling grasslands.",
+    "description": "Tadiandamol is the highest peak in the Coorg (Kodagu) region of Karnataka. The trail winds through dense shola forests, open grasslands, and coffee country, offering misty Western Ghats views from the summit. It's a fairly short trek that can be done in a day, making it a favourite weekend escape from Bengaluru.",
+    "difficultyLevel": "Moderate",
+    "altitude": 1748,
+    "distance": 14.0,
+    "days": 1,
+    "nights": 0,
+    "bestSeason": "October to February",
+    "location": "Coorg, Karnataka, India",
+    "latitude": 12.2333,
+    "longitude": 75.6167,
+    "startingPoint": "Nalknad Palace (Kakkabe)",
+    "endingPoint": "Nalknad Palace (Kakkabe)",
+    "trekType": "Day trek",
+    "rating": 4.2,
+    "reviewCount": 410,
+    "tags": [
+      "Western Ghats",
+      "Day Trek",
+      "Grassland",
+      "Coorg",
+      "Weekend"
+    ],
+    "isFeatured": false,
+    "isPopular": false,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Nalknad Palace to Tadiandamol summit and back",
+        "description": "Trek from the Nalknad Palace through shola forests and grassy ridges to the summit, then return by the same route.",
+        "distanceCovered": 14.0,
+        "altitudeReached": 1748
+      }
+    ]
+  },
+  {
+    "id": "goechala",
+    "title": "Goechala Trek",
+    "coverImage": "goechala/cover.jpg",
+    "images": [
+      "goechala/1.jpg",
+      "goechala/2.jpg",
+      "goechala/3.jpg"
+    ],
+    "shortDescription": "An epic Sikkim trek to the foot of mighty Kanchenjunga.",
+    "description": "Goechala is one of the most rewarding high-altitude treks in India, leading deep into the Kanchenjunga National Park in Sikkim. The trail rewards trekkers with up-close views of Mount Kanchenjunga, the world's third-highest peak, along with more than a dozen other summits, glacial lakes, and rhododendron forests. It is a demanding trek best suited to experienced hikers.",
+    "difficultyLevel": "Difficult",
+    "altitude": 4940,
+    "distance": 90.0,
+    "days": 10,
+    "nights": 9,
+    "bestSeason": "April to June, September to November",
+    "location": "West Sikkim, India",
+    "latitude": 27.36,
+    "longitude": 88.16,
+    "startingPoint": "Yuksom",
+    "endingPoint": "Yuksom",
+    "trekType": "Multi-day",
+    "rating": 4.9,
+    "reviewCount": 560,
+    "tags": [
+      "Himalayan",
+      "Kanchenjunga",
+      "High Altitude",
+      "Glacial Lakes",
+      "Challenging"
+    ],
+    "isFeatured": true,
+    "isPopular": false,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Yuksom to Sachen",
+        "description": "Begin trekking from Yuksom through dense forest, crossing several bridges to reach Sachen.",
+        "distanceCovered": 8.0,
+        "altitudeReached": 2200
+      },
+      {
+        "dayNumber": 2,
+        "title": "Sachen to Tshoka",
+        "description": "Cross the Prek Chu river and climb to the village of Tshoka.",
+        "distanceCovered": 7.0,
+        "altitudeReached": 3000
+      },
+      {
+        "dayNumber": 3,
+        "title": "Tshoka to Dzongri",
+        "description": "Ascend through rhododendron forest to the alpine meadows of Dzongri.",
+        "distanceCovered": 9.0,
+        "altitudeReached": 4020
+      },
+      {
+        "dayNumber": 4,
+        "title": "Dzongri acclimatisation and Dzongri Top",
+        "description": "Sunrise hike to Dzongri Top for panoramic Kanchenjunga views, rest and acclimatise.",
+        "distanceCovered": 4.0,
+        "altitudeReached": 4200
+      },
+      {
+        "dayNumber": 5,
+        "title": "Dzongri to Thansing",
+        "description": "Descend to the Prek Chu valley and trek to Thansing.",
+        "distanceCovered": 9.0,
+        "altitudeReached": 3930
+      },
+      {
+        "dayNumber": 6,
+        "title": "Thansing to Lamuney",
+        "description": "Short trek along the valley to Lamuney, the last campsite before the pass.",
+        "distanceCovered": 5.0,
+        "altitudeReached": 4180
+      },
+      {
+        "dayNumber": 7,
+        "title": "Lamuney to Goechala viewpoint and back to Kokchurang",
+        "description": "Pre-dawn push to the Goechala viewpoint for sunrise on Kanchenjunga, then a long descent to Kokchurang.",
+        "distanceCovered": 16.0,
+        "altitudeReached": 4940
+      },
+      {
+        "dayNumber": 8,
+        "title": "Kokchurang to Tshoka",
+        "description": "Trek back down through the forest to Tshoka.",
+        "distanceCovered": 11.0,
+        "altitudeReached": 3000
+      },
+      {
+        "dayNumber": 9,
+        "title": "Tshoka to Yuksom",
+        "description": "Final descent back to Yuksom.",
+        "distanceCovered": 15.0,
+        "altitudeReached": 1780
+      },
+      {
+        "dayNumber": 10,
+        "title": "Departure from Yuksom",
+        "description": "Drive out from Yuksom, trek concludes.",
+        "distanceCovered": 0.0,
+        "altitudeReached": 1780
+      }
+    ]
+  },
+  {
+    "id": "sandakphu",
+    "title": "Sandakphu Trek",
+    "coverImage": "sandakphu/cover.jpg",
+    "images": [
+      "sandakphu/1.jpg",
+      "sandakphu/2.jpg"
+    ],
+    "shortDescription": "Walk the Singalila ridge to see four of the five highest peaks on Earth.",
+    "description": "Sandakphu is the highest point in West Bengal, located on the Singalila ridge along the India-Nepal border. The trek is famous for offering views of four of the world's five highest peaks - Everest, Kanchenjunga, Lhotse, and Makalu - including the iconic 'Sleeping Buddha' formation. The trail passes through charming villages and the rhododendron-rich Singalila National Park.",
+    "difficultyLevel": "Moderate",
+    "altitude": 3636,
+    "distance": 47.0,
+    "days": 6,
+    "nights": 5,
+    "bestSeason": "October to December, March to May",
+    "location": "Darjeeling, West Bengal, India",
+    "latitude": 27.1,
+    "longitude": 88.0,
+    "startingPoint": "Maneybhanjang",
+    "endingPoint": "Sepi",
+    "trekType": "Multi-day",
+    "rating": 4.6,
+    "reviewCount": 720,
+    "tags": [
+      "Himalayan",
+      "Singalila",
+      "Everest View",
+      "Rhododendron",
+      "Sleeping Buddha"
+    ],
+    "isFeatured": false,
+    "isPopular": true,
+    "itinerary": [
+      {
+        "dayNumber": 1,
+        "title": "Maneybhanjang to Tumling",
+        "description": "Start from Maneybhanjang and trek along the ridge through Meghma to Tumling, crossing into Nepal-side trails.",
+        "distanceCovered": 11.0,
+        "altitudeReached": 2970
+      },
+      {
+        "dayNumber": 2,
+        "title": "Tumling to Kalipokhri",
+        "description": "Walk through Singalila National Park forests to the sacred pond at Kalipokhri.",
+        "distanceCovered": 12.0,
+        "altitudeReached": 3100
+      },
+      {
+        "dayNumber": 3,
+        "title": "Kalipokhri to Sandakphu",
+        "description": "Steep final climb to Sandakphu for sweeping views of the Sleeping Buddha and Everest range.",
+        "distanceCovered": 6.0,
+        "altitudeReached": 3636
+      },
+      {
+        "dayNumber": 4,
+        "title": "Sandakphu to Sabargram",
+        "description": "Trek along the high ridge towards Phalut, camping at Sabargram.",
+        "distanceCovered": 14.0,
+        "altitudeReached": 3540
+      },
+      {
+        "dayNumber": 5,
+        "title": "Sabargram to Gorkhey via Phalut",
+        "description": "Reach Phalut viewpoint, then descend steeply into the forested valley to Gorkhey.",
+        "distanceCovered": 16.0,
+        "altitudeReached": 2350
+      },
+      {
+        "dayNumber": 6,
+        "title": "Gorkhey to Sepi, drive out",
+        "description": "Final short trek to Sepi and drive back to Darjeeling.",
+        "distanceCovered": 8.0,
+        "altitudeReached": 2000
+      }
+    ]
+  }
+]

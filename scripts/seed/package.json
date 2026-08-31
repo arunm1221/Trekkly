@@ -1,0 +1,14 @@
+{
+  "name": "trekkly-seed",
+  "version": "1.0.0",
+  "description": "One-off script to seed Trekkly trek data into Firebase (Firestore + Storage).",
+  "private": true,
+  "scripts": {
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.10.0",
+    "@google-cloud/storage": "^7.13.0",
+    "firebase-admin": "^12.7.0"
+  }
+}

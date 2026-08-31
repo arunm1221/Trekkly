@@ -28,5 +28,6 @@ sealed class ScreenDestination(val route: String) {
     }
 
     data object LoginScreen: ScreenDestination("LoginScreen")
+    data object MainScreen: ScreenDestination("MainScreen")
 
 }
