@@ -1,15 +1,16 @@
 package com.example.trekkly.data.repository
 
+import android.util.Log
 import com.example.trekkly.data.local.dao.TrekDao
 import com.example.trekkly.data.local.entity.FavouriteEntity
 import com.example.trekkly.data.mapper.toDomain
 import com.example.trekkly.data.mapper.toEntity
 import com.example.trekkly.data.remote.TrekRemoteDataSource
 import com.example.trekkly.data.remote.UserTrekRemoteDataSource
+import com.example.trekkly.data.session.CurrentUserProvider
 import com.example.trekkly.domain.model.Trek
 import com.example.trekkly.domain.model.TrekStatus
 import com.example.trekkly.domain.model.UserTrek
-import com.example.trekkly.domain.repository.AuthRepository
 import com.example.trekkly.domain.repository.TrekRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -20,19 +21,21 @@ class TrekRepositoryImpl @Inject constructor(
     private val trekDao: TrekDao,
     private val remote: TrekRemoteDataSource,
     private val userRemote: UserTrekRemoteDataSource,
-    private val authRepository: AuthRepository
+    private val currentUserProvider: CurrentUserProvider
 ) : TrekRepository {
 
     // ---- Catalog ----
 
     override fun observeTreks(): Flow<List<Trek>> =
         combine(trekDao.observeTreks(), trekDao.observeFavoritesIds()) { treks, favouriteIds ->
+            Log.d("TrekSync", "room emitted ${treks.size} treks")
             val favourites = favouriteIds.toSet()
             treks.map { entity -> entity.toDomain(isFavourite = entity.id in favourites) }
         }
 
     override suspend fun syncTrek() {
         remote.observeTreks().collect { dtos ->
+            Log.d("TrekSync", "writing ${dtos.size} treks to room")
             trekDao.upsertTreks(dtos.map { it.toEntity() })
         }
     }
@@ -62,7 +65,7 @@ class TrekRepositoryImpl @Inject constructor(
         }
 
     override suspend fun syncUserTreks() {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.observeUserTreks(uid).collect { dtos ->
             trekDao.clearUserTreks()
             trekDao.upsertUserTreks(dtos.map { it.toEntity() })
@@ -70,27 +73,27 @@ class TrekRepositoryImpl @Inject constructor(
     }
 
     override suspend fun scheduleTrek(trekId: String, scheduleDate: Long) {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.scheduleTrek(uid, trekId, scheduleDate)
     }
 
     override suspend fun startTrek(trekId: String) {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.startTrek(uid, trekId)
     }
 
     override suspend fun updateProgress(trekId: String, currentDay: Int) {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.updateProgress(uid, trekId, currentDay)
     }
 
     override suspend fun completeTrek(trekId: String) {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.completeTrek(uid, trekId)
     }
 
     override suspend fun removeUserTrek(trekId: String) {
-        val uid = authRepository.currentUserId() ?: return
+        val uid = currentUserProvider.requireUid() ?: return
         userRemote.removeUserTrek(uid, trekId)
     }
 }

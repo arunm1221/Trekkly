@@ -12,10 +12,13 @@ sealed class ScreenDestination(val route: String) {
      * Query-parameter route — safer than path parameters for strings that may contain
      * special characters like '+' (dial codes) or Firebase's verificationId format.
      *
+     * OTP is part of sign-up only; login matches on phone number instead.
+     *
      * Usage: navController.navigate(OtpVerification.createRoute(vId, phone, name))
      */
     data object OtpVerification : ScreenDestination(
-        "OtpVerification?verificationId={verificationId}&phoneNumber={phoneNumber}&fullName={fullName}"
+        "OtpVerification?verificationId={verificationId}&phoneNumber={phoneNumber}" +
+                "&fullName={fullName}"
     ) {
         fun createRoute(
             verificationId: String,

@@ -19,13 +19,21 @@ fun TrekklyNavHost(
     navHostController: NavHostController = rememberNavController(),
     startDestination: String =  ScreenDestination.SplashScreen.route
 ){
+    /** Clears the whole back stack so Back from home never returns to auth. */
+    fun goToMain() {
+        navHostController.navigate(ScreenDestination.MainScreen.route) {
+            popUpTo(0) { inclusive = true }
+        }
+    }
+
     NavHost(navController = navHostController,startDestination = startDestination) {
         composable(ScreenDestination.SplashScreen.route){
-            SplashScreen(onSplashFinished = {
-                navHostController.navigate(ScreenDestination.AuthenticationScreen.route
-                ){
-                    popUpTo(ScreenDestination.SplashScreen.route){
-                        inclusive=true
+            SplashScreen(onSplashFinished = { isLoggedIn ->
+                if (isLoggedIn) {
+                    goToMain()
+                } else {
+                    navHostController.navigate(ScreenDestination.AuthenticationScreen.route) {
+                        popUpTo(ScreenDestination.SplashScreen.route) { inclusive = true }
                     }
                 }
             })
@@ -58,7 +66,9 @@ fun TrekklyNavHost(
                 onNavigateToOtp = { verificationId, phoneNumber, fullName ->
                     navHostController.navigate(
                         ScreenDestination.OtpVerification.createRoute(
-                            verificationId, phoneNumber, fullName
+                            verificationId = verificationId,
+                            phoneNumber = phoneNumber,
+                            fullName = fullName
                         )
                     )
                 }
@@ -73,18 +83,12 @@ fun TrekklyNavHost(
                 navArgument("fullName") { type = NavType.StringType; defaultValue = "" }
             )
         ) { backStackEntry ->
-            val verificationId = backStackEntry.arguments?.getString("verificationId") ?: ""
             val phoneNumber = backStackEntry.arguments?.getString("phoneNumber") ?: ""
-            val fullName = backStackEntry.arguments?.getString("fullName") ?: ""
 
             OtpVerificationScreen(
                 phoneNumber = phoneNumber,
                 onBackClick = { navHostController.popBackStack() },
-                onVerificationSuccess = {
-                   navHostController.navigate(ScreenDestination.MainScreen.route){
-                       popUpTo(0){inclusive=true}
-                   }
-                }
+                onVerificationSuccess = { goToMain() }
             )
         }
 
@@ -93,11 +97,7 @@ fun TrekklyNavHost(
 
             LoginScreen(
                 onBackClick = {navHostController.popBackStack()},
-                onLoginClick = {
-                    navHostController.navigate(ScreenDestination.MainScreen.route){
-                        popUpTo(0){inclusive=true}
-                    }
-                },
+                onLoginClick = { goToMain() },
                 onSignUpClick = { navHostController.navigate(ScreenDestination.SignUpScreen.route) }
 
             )

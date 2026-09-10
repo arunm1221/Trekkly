@@ -143,14 +143,16 @@ fun OtpScreenContent(
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center)
-                Spacer(modifier = Modifier.weight(1f))
-                ResendFooter(
-                    canResend = uiState.canResend,
-                    cooldownSeconds = uiState.resendCooldownSeconds,
-                    onResendClick = onResendClick,
-                    modifier = Modifier.padding(bottom = 32.dp)
-                )
             }
+            // Resend must render whether or not there is an error — it used to be
+            // nested inside the errorMessage branch and was invisible otherwise.
+            Spacer(modifier = Modifier.weight(1f))
+            ResendFooter(
+                canResend = uiState.canResend,
+                cooldownSeconds = uiState.resendCooldownSeconds,
+                onResendClick = onResendClick,
+                modifier = Modifier.padding(bottom = 32.dp)
+            )
 
         }
     }

@@ -74,12 +74,23 @@ class OtpViewModel @Inject constructor(
                     _uiState.update { it.copy(isLoading = false) }
                     startResendCountDown()
                 }
+                .onFailure { error ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            errorMessage = error.message ?: "Couldn't resend the code. Please try again."
+                        )
+                    }
+                }
         }
     }
     private var currentVerificationId: String = verificationId
+
     private fun verifyAndComplete() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, errorMessage = null) }
+
+            // OTP is a sign-up-only step; login matches on phone number instead.
             completeSignUpUseCase(
                 verificationId = currentVerificationId,
                 otp = _uiState.value.otp,
@@ -112,5 +123,4 @@ class OtpViewModel @Inject constructor(
             }
         }
     }
-
 }
