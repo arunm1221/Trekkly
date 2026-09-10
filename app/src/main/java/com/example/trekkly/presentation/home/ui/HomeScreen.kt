@@ -78,7 +78,7 @@ fun HomeScreen(
                 item {
                     SectionHeader(title = "Current Expedition", action ="Live", onAction =null)
                     Spacer(Modifier.height(8.dp))
-                    ExpeditionCard(expedition = expedition,onClick = onTrekkClick(expedition.trek.id))
+                    ExpeditionCard(expedition = expedition, onClick = { onTrekkClick(expedition.trek.id) })
                 }
             }
 
@@ -87,7 +87,7 @@ fun HomeScreen(
                     SectionHeader(title = "Upcoming Treks", action ="View All", onAction =onViewAllClick)
                 }
                 items(uiState.upcoming, key = {it.trek.id}){ userTrek->
-                    UpcomingTrekItem(userTrek = userTrek,onClick = {onTrekkClick({userTrek.trek.id}.toString()) })
+                    UpcomingTrekItem(userTrek = userTrek, onClick = { onTrekkClick(userTrek.trek.id) })
 
                 }
             }
@@ -178,10 +178,10 @@ private fun formatDate(millis: Long?): String {
 }
 
 @Composable
-fun ExpeditionCard(expedition: UserTrek, onClick: Unit) {
+fun ExpeditionCard(expedition: UserTrek, onClick: () -> Unit) {
     val trek = expedition.trek
     Card(
-        onClick = { onClick },
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier.fillMaxWidth()
             .height(180.dp)

@@ -2,7 +2,11 @@ package com.example.trekkly.presentation.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.trekkly.domain.repository.TrekRepository
+import com.example.trekkly.domain.usecase.trek.ObserveActiveExpeditionUseCase
+import com.example.trekkly.domain.usecase.trek.ObserveUpcomingTreksUseCase
+import com.example.trekkly.domain.usecase.trek.SyncTreksUseCase
+import com.example.trekkly.domain.usecase.trek.SyncUserTreksUseCase
+import com.example.trekkly.domain.usecase.trek.ToggleFavouriteUseCase
 import com.example.trekkly.presentation.home.event.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,8 +20,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    val repository: TrekRepository
-): ViewModel(){
+    private val observeActiveExpedition: ObserveActiveExpeditionUseCase,
+    private val observeUpcomingTreks: ObserveUpcomingTreksUseCase,
+    private val syncTreks: SyncTreksUseCase,
+    private val syncUserTreks: SyncUserTreksUseCase,
+    private val toggleFavourite: ToggleFavouriteUseCase
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState = _uiState.asStateFlow()
@@ -27,31 +35,30 @@ class HomeViewModel @Inject constructor(
         startSync()
     }
 
-    private fun startSync() {
-        viewModelScope.launch {
-            runCatching { repository.syncTrek() }
-                .onFailure { e-> _uiState.update { it.copy(error=e.message) } }
-        }
-        viewModelScope.launch {
-            runCatching { repository.syncUserTreks() }
-                .onFailure { e-> _uiState.update { it.copy(error=e.message) } }
-        }
-
-    }
-
     private fun observeHomeData() {
-
-        combine(repository.observeActiveExpedition(),repository.observeUpcomingTreks()){
-            active,upcoming-> active to upcoming
-        }.onEach { (active,upcoming)->
+        combine(observeActiveExpedition(), observeUpcomingTreks()) { active, upcoming ->
+            active to upcoming
+        }.onEach { (active, upcoming) ->
             _uiState.update {
-                it.copy(activeExpedition = active,upcoming=upcoming, isLoading = false)
+                it.copy(activeExpedition = active, upcoming = upcoming, isLoading = false)
             }
         }.launchIn(viewModelScope)
-
     }
 
-    fun onFavouriteToggle(trekId: String,favourite: Boolean){
-        viewModelScope.launch { repository.setFavourite(trekId,favourite) }
+    private fun startSync() {
+        viewModelScope.launch {
+            syncTreks().onFailure { e ->
+                _uiState.update { it.copy(error = e.message) }
+            }
+        }
+        viewModelScope.launch {
+            syncUserTreks().onFailure { e ->
+                _uiState.update { it.copy(error = e.message) }
+            }
+        }
+    }
+
+    fun onFavouriteToggle(trekId: String, favourite: Boolean) {
+        viewModelScope.launch { toggleFavourite(trekId, favourite) }
     }
 }

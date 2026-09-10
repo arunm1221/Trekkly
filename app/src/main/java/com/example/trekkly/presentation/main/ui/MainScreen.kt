@@ -25,6 +25,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.trekkly.presentation.home.ui.HomeScreen
+import com.example.trekkly.presentation.trekks.ui.TrekksScreen
 
 sealed class BottomTab(val route: String,val label: String,val icon: ImageVector){
     data object Home: BottomTab("home","Home", Icons.Default.Home)
@@ -65,7 +66,7 @@ fun MainScreen(){
             modifier = Modifier.padding(padding)
         ){
             composable(BottomTab.Home.route) { HomeScreen()}
-            composable(BottomTab.Trekks.route) { PlaceholderScreen("Trekks") }
+            composable(BottomTab.Trekks.route) { TrekksScreen () }
             composable(BottomTab.Map.route) { PlaceholderScreen("Map") }
             composable(BottomTab.Settings.route) { PlaceholderScreen("Settings") }
         }

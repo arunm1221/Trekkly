@@ -19,3 +19,15 @@ val PrimaryCard = Color(0xFF3D7A5C)
 val SecondaryColor = Color(0xFFE8A838)
 
 val TextColor = Color(0xFFF0EBE0)
+
+// ---- Trekkly dark palette ----
+val ForestBackground = Color(0xFF0F1C15)       // app canvas
+val ForestSurface = Color(0xFF16261D)          // cards, search field, unselected chips
+val ForestSurfaceElevated = Color(0xFF142118)  // bottom bar
+val ForestOutline = Color(0xFF2A4034)          // hairlines, dividers
+
+// Difficulty accents
+val DifficultyEasy = Color(0xFF6FCF97)
+val DifficultyModerate = Color(0xFFA8D5BA)
+val DifficultyDifficult = Color(0xFFE8A838)
+val DifficultyExpert = Color(0xFFE2725B)

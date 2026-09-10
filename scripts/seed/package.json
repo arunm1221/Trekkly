@@ -9,6 +9,7 @@
   "dependencies": {
     "@google-cloud/firestore": "^7.10.0",
     "@google-cloud/storage": "^7.13.0",
-    "firebase-admin": "^12.7.0"
+    "firebase-admin": "^12.7.0",
+    "sharp": "^0.35.4"
   }
 }

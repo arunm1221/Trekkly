@@ -1,5 +1,6 @@
 package com.example.trekkly.data.remote
 
+import android.util.Log
 import com.example.trekkly.data.mapper.TrekDto
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.channels.awaitClose
@@ -15,15 +16,33 @@ class TrekRemoteDataSource @Inject constructor(
         val registration = firestore.collection("treks")
             .addSnapshotListener { snapshots, exception ->
                 if (exception!=null){
+                    Log.e(TAG, "treks listener failed", exception)
                     close(exception)
                     return@addSnapshotListener
                 }
-                if (snapshots!=null){
-                    trySend(snapshots.toObjects(TrekDto::class.java))
+                if (snapshots == null) return@addSnapshotListener
+
+                Log.d(
+                    TAG,
+                    "snapshot: ${snapshots.size()} docs, fromCache=${snapshots.metadata.isFromCache}"
+                )
+
+                // An offline cold cache reports an empty collection with no error, which is
+                // indistinguishable from a genuinely empty catalogue. Ignore it and wait for
+                // the server snapshot that follows once connectivity returns.
+                if (snapshots.isEmpty && snapshots.metadata.isFromCache) {
+                    Log.w(TAG, "empty snapshot served from cache - offline? ignoring")
+                    return@addSnapshotListener
                 }
+
+                trySend(snapshots.toObjects(TrekDto::class.java))
             }
         awaitClose {
             registration.remove()
         }
+    }
+
+    private companion object {
+        const val TAG = "TrekSync"
     }
 }
