@@ -47,7 +47,7 @@ class TrekRepositoryImpl @Inject constructor(
 
     // ---- Expeditions ----
 
-    private fun observeUserTreksDomain(): Flow<List<UserTrek>> =
+    override fun observeUserTreks(): Flow<List<UserTrek>> =
         combine(observeTreks(), trekDao.observeUserTreks()) { treks, userEntities ->
             val trekById = treks.associateBy { it.id }
             userEntities.mapNotNull { entity ->
@@ -56,10 +56,10 @@ class TrekRepositoryImpl @Inject constructor(
         }
 
     override fun observeActiveExpedition(): Flow<UserTrek?> =
-        observeUserTreksDomain().map { list -> list.firstOrNull { it.status == TrekStatus.ACTIVE } }
+        observeUserTreks().map { list -> list.firstOrNull { it.status == TrekStatus.ACTIVE } }
 
     override fun observeUpcomingTreks(): Flow<List<UserTrek>> =
-        observeUserTreksDomain().map { list ->
+        observeUserTreks().map { list ->
             list.filter { it.status == TrekStatus.UPCOMING }
                 .sortedBy { it.scheduleDate ?: Long.MAX_VALUE }
         }

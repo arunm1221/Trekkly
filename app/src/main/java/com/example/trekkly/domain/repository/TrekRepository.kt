@@ -12,6 +12,8 @@ interface TrekRepository {
     suspend fun setFavourite(trekId: String, favourite: Boolean)
 
     // Expeditions (per-user)
+    /** Every expedition the user has, in any status — the source for lifetime stats. */
+    fun observeUserTreks(): Flow<List<UserTrek>>
     fun observeActiveExpedition(): Flow<UserTrek?>
     fun observeUpcomingTreks(): Flow<List<UserTrek>>
     suspend fun syncUserTreks()
