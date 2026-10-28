@@ -1,56 +1,55 @@
 package com.example.trekkly.presentation.theme
 
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = PrimaryColor,
-    secondary = SecondaryColor,
-    tertiary = Pink80
-)
+    primary = SecondaryColor,
+    onPrimary = PrimaryColor,
+    primaryContainer = PrimaryColor,
+    onPrimaryContainer = TextColor,
 
-private val LightColorScheme = lightColorScheme(
-    primary = PrimaryCard,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    secondary = PrimaryCard,
+    onSecondary = TextColor,
+    secondaryContainer = PrimaryColor,
+    onSecondaryContainer = PrimaryText,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    tertiary = DifficultyEasy,
+    onTertiary = PrimaryColor,
+
+    background = ForestBackground,
+    onBackground = TextColor,
+
+    surface = ForestBackground,
+    onSurface = TextColor,
+    // Cards, search field, unselected chips
+    surfaceVariant = ForestSurface,
+    // Secondary text: location, "21d", placeholder
+    onSurfaceVariant = PrimaryText,
+
+    surfaceContainerLowest = ForestBackground,
+    surfaceContainerLow = ForestSurfaceElevated,
+    surfaceContainer = ForestSurfaceElevated,   // NavigationBar background
+    surfaceContainerHigh = ForestSurface,
+    surfaceContainerHighest = ForestSurface,
+
+    outline = ForestOutline,
+    outlineVariant = ForestOutline,
+
+    error = DifficultyExpert,
+    onError = PrimaryColor
 )
 
 @Composable
 fun TrekklyTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = DarkColorScheme,
         typography = Typography,
         content = content
     )

@@ -43,25 +43,34 @@ class LoginViewModel @Inject constructor(
     }
 
     fun onPhoneNumberChanged(value: String){
-        _uiState.update { it.copy(phoneNumber = value) }
+        _uiState.update { it.copy(phoneNumber = value.filter(Char::isDigit), errorMessage = null) }
     }
+
     fun onLoginClicked(){
-        val state=_uiState.value
+        val state = _uiState.value
+        if (!state.isFormValid) {
+            _uiState.update { it.copy(errorMessage = "Please enter a valid phone number") }
+            return
+        }
+
+        // Must match the format sign-up stored: dial code + national number.
         val fullPhone = "${state.selectedCountryCode?.dialCode.orEmpty()}${state.phoneNumber}"
 
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, errorMessage = null) }
-            loginUseCase.invoke(phoneNumber = fullPhone)
+            loginUseCase(phoneNumber = fullPhone)
                 .onSuccess {
                     _uiState.update { it.copy(isLoading = false) }
                     _event.send(LoginEvent.NavigateToHome)
                 }
-                .onFailure {error->
-                    _uiState.update { it.copy(isLoading = false, errorMessage = error.message?:"Something went wrong") }
-
+                .onFailure { error ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            errorMessage = error.message ?: "Something went wrong. Please try again."
+                        )
+                    }
                 }
         }
-
     }
-
 }

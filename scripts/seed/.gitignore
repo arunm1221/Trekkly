@@ -1,0 +1,6 @@
+# NEVER commit these — they contain secrets or are regenerable
+serviceAccountKey.json
+node_modules/
+
+# Local image files are large; keep them out of git (upload via the script)
+images/

@@ -37,6 +37,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.collectAsState
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.trekkly.R
 import com.example.trekkly.presentation.theme.PrimaryCard
 import com.example.trekkly.presentation.theme.PrimaryText
@@ -46,15 +48,43 @@ import kotlinx.coroutines.delay
 import java.util.Locale.getDefault
 import kotlin.time.Duration.Companion.milliseconds
 
+/**
+ * Shows the branded splash, then routes by session state instead of always
+ * sending the user to the auth screen.
+ *
+ * [onSplashFinished] receives true when a signed-in session was restored.
+ */
 @Composable
-fun SplashScreen(onSplashFinished:()-> Unit){
+fun SplashScreen(
+    onSplashFinished: (isLoggedIn: Boolean) -> Unit,
+    viewModel: SplashViewModel = hiltViewModel()
+) {
+    val isLoggedIn by viewModel.isLoggedIn.collectAsState()
+    var animationFinished by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        delay(2150.milliseconds)
+        animationFinished = true
+    }
+
+    // Wait for both the animation and the session lookup before navigating.
+    LaunchedEffect(animationFinished, isLoggedIn) {
+        val resolved = isLoggedIn
+        if (animationFinished && resolved != null) {
+            onSplashFinished(resolved)
+        }
+    }
+
+    SplashContent()
+}
+
+@Composable
+private fun SplashContent() {
     var contentVisible by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         delay(150.milliseconds)
-        contentVisible=true
-        delay(2000.milliseconds)
-        onSplashFinished()
+        contentVisible = true
     }
     Box(modifier = Modifier.fillMaxSize()){
 
@@ -105,5 +135,5 @@ fun SplashScreen(onSplashFinished:()-> Unit){
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenView(){
-    SplashScreen(onSplashFinished = {})
+    SplashContent()
 }
